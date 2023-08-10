@@ -13,10 +13,10 @@ export default function Home() {
     <>
       <Grid
         templateAreas={`"header header""nav main""nav footer"`}
-        gridTemplateRows={"50px 1fr 50px"}
+        gridTemplateRows={"80px 1fr 50px"}
         gridTemplateColumns={"200px 1fr"}
         h="100vh"
-        gap="1"
+        // gap="1"
         color="blackAlpha.700"
         fontWeight="bold"
       >
@@ -26,7 +26,7 @@ export default function Home() {
         <GridItem pl="2" bg="CINZ.60" area={"nav"}>
           <NavbarHome />
         </GridItem>
-        <GridItem pl="2" bg="BRPR.10" area={"main"}>
+        <GridItem bg="BRPR.10" area={"main"}>
           {/* Main */}
           <MainHome />
         </GridItem>
