@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-const HomePage = () => {
+const MainHome = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -41,4 +41,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default MainHome;
