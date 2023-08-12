@@ -1,4 +1,4 @@
-import FormAddProducts from "@/components/layouts/forms/formAddProducts";
+import FormEditProducts from "@/components/layouts/forms/formEditProducts";
 import {
   Box,
   Button,
@@ -21,30 +21,30 @@ interface Props {
   closeModal: () => void;
 }
 
-const ModuleAddProducts = ({ openModal, closeModal }: Props) => {
+const ModuleEditProducts = ({ openModal, closeModal }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <Modal isOpen={openModal} onClose={closeModal} isCentered>
         <ModalOverlay />
         <ModalContent bg={"BRPR.10"}>
-          {/* <ModalHeader>Adicionar Produto</ModalHeader> */}
           <ModalHeader color={"VERD.40"}>
             <Text display="center" alignItems="center" justifyContent="center">
-              ADD PRODUTO
+              Edit PRODUTO
             </Text>
           </ModalHeader>
-          <ModalCloseButton
-          // w="40px"
-          // h="30px"
-          // bg={"VERM.30"}
-          // borderRadius="10px"
-          />
+          <ModalCloseButton />
           <ModalBody>
-            <FormAddProducts />
+            <FormEditProducts />
           </ModalBody>
 
-          <ModalFooter gap="4">
+          <ModalFooter justifyContent={"space-between"} gap="4">
+            <Box display={"flex"} alignItems="center" justifyContent="center">
+              <Text color={"CINZ.60"}>Quant. em Casa:&nbsp;</Text>
+              <Text color={"AZUL.30"} fontSize={"30px"}>
+                10
+              </Text>
+            </Box>
             <Button
               w="120px"
               h="40px"
@@ -70,4 +70,4 @@ const ModuleAddProducts = ({ openModal, closeModal }: Props) => {
   );
 };
 
-export default ModuleAddProducts;
+export default ModuleEditProducts;

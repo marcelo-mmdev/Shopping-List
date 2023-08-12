@@ -2,7 +2,7 @@ import { ProductsService } from "@/core/services/api/products/ProductsService";
 import { Box, FormControl, FormLabel, Input, Select } from "@chakra-ui/react";
 import React, { useState } from "react";
 
-const FormAddProducts = () => {
+const FormEditProducts = () => {
   const [produto, setProduto] = useState("");
   const [preco, setPreco] = useState("");
   const [quantidade, setQuantidade] = useState("");
@@ -22,17 +22,6 @@ const FormAddProducts = () => {
 
   return (
     <>
-      <Box>
-        <FormControl>
-          <FormLabel color={"CINZ.60"}>Produto</FormLabel>
-          <Input
-            type="text"
-            variant="flushed"
-            value={produto}
-            onChange={handleInputProduto}
-          />
-        </FormControl>
-      </Box>
       <Box display={"flex"} gap="3" mt="20px">
         <Box>
           <FormControl>
@@ -42,17 +31,7 @@ const FormAddProducts = () => {
         </Box>
         <Box>
           <FormControl>
-            <FormLabel color={"CINZ.60"}>Q. em casa</FormLabel>
-            <Input
-              type="number"
-              value={quantidade}
-              onChange={handleInputQuantidade}
-            />
-          </FormControl>
-        </Box>
-        <Box>
-          <FormControl>
-            <FormLabel color={"CINZ.60"}>Q. para compra</FormLabel>
+            <FormLabel color={"CINZ.60"}>Quantidade</FormLabel>
             <Input
               type="number"
               value={quantidade}
@@ -65,4 +44,4 @@ const FormAddProducts = () => {
   );
 };
 
-export default FormAddProducts;
+export default FormEditProducts;

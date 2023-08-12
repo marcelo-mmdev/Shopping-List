@@ -1,4 +1,4 @@
-import FormAddProducts from "@/components/layouts/forms/formAddProducts";
+import FormEditProducts from "@/components/layouts/forms/formEditProducts";
 import {
   Box,
   Button,
@@ -14,54 +14,56 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import { MdCheck } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 
 interface Props {
   openModal: boolean;
   closeModal: () => void;
 }
 
-const ModuleAddProducts = ({ openModal, closeModal }: Props) => {
+const ModuleDeleteProducts = ({ openModal, closeModal }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <Modal isOpen={openModal} onClose={closeModal} isCentered>
         <ModalOverlay />
         <ModalContent bg={"BRPR.10"}>
-          {/* <ModalHeader>Adicionar Produto</ModalHeader> */}
-          <ModalHeader color={"VERD.40"}>
+          <ModalHeader color={"VERM.30"}>
             <Text display="center" alignItems="center" justifyContent="center">
-              ADD PRODUTO
+              DELETE PRODUTO
             </Text>
           </ModalHeader>
-          <ModalCloseButton
-          // w="40px"
-          // h="30px"
-          // bg={"VERM.30"}
-          // borderRadius="10px"
-          />
+          <ModalCloseButton />
           <ModalBody>
-            <FormAddProducts />
+            <Box display={"center"} alignItems="center" justifyContent="center">
+              {/* <Text color={"CINZ.60"}>Quant. em Casa:&nbsp;</Text> */}
+              <Text color={"CINZ.60"} fontSize={"30px"}>
+                Deseja excluir o PRODUTO?
+              </Text>
+            </Box>
           </ModalBody>
 
-          <ModalFooter gap="4">
+          <ModalFooter justifyContent={"space-between"} gap="4">
+            <Text color={"CINZ.60"} fontSize={"12px"}>
+              Uma exclusão não pode ser desfeita.
+            </Text>
             <Button
               w="120px"
               h="40px"
-              bg={"VERD.40"}
+              bg={"VERM.30"}
               color={"BRPR.10"}
               borderRadius="10px"
               onClick={onClose}
             >
               <Icon
-                as={MdCheck}
+                as={MdDelete}
                 w="20px"
                 h="20px"
                 display="center"
                 alignItems="center"
                 justifyContent="center"
               />
-              Salvar
+              Sim
             </Button>
           </ModalFooter>
         </ModalContent>
@@ -70,4 +72,4 @@ const ModuleAddProducts = ({ openModal, closeModal }: Props) => {
   );
 };
 
-export default ModuleAddProducts;
+export default ModuleDeleteProducts;
