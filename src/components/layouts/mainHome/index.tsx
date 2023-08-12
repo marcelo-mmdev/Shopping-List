@@ -2,10 +2,7 @@
 import {
   Box,
   Button,
-  Container,
-  Flex,
   Icon,
-  Spinner,
   Table,
   TableContainer,
   Tbody,
@@ -20,7 +17,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { MdDelete, MdEdit, MdAddShoppingCart } from "react-icons/md";
 import ModuleAddProducts from "@/components/templates/modules/moduleAddProducts";
-import axios from "axios";
 import {
   IProducts,
   ProductsService,
@@ -87,10 +83,13 @@ const MainHome = () => {
                       <Button
                         w="38px"
                         h="32px"
-                        bg={"VERD.20"}
+                        bg={"VERD.30"}
                         borderRadius="10px"
                         onClick={() => {
                           onOpenAddProducts();
+                        }}
+                        _hover={{
+                          bg: "VERD.20",
                         }}
                       >
                         <Icon
@@ -111,11 +110,9 @@ const MainHome = () => {
         </TableContainer>
         <TableContainer
           h="100%"
-          borderRadius={"8px"}
+          // borderRadius={"8px"}
           mt="5px"
-          // height="70vh"
-          // overflowY="scroll"
-          // border="solid 1px #000"
+          overflowY="auto"
           color="#000"
         >
           <Table>
@@ -124,68 +121,113 @@ const MainHome = () => {
                 return (
                   <Tr
                     key={data.id}
-                    // onDoubleClick={() => {
-                    //   getRowId === "1" ? setRowId("0") : setRowId("1");
-                    // }}
-                    // backgroundColor={getRowId === "1" ? getRowColor : "#ffffff"}
-                    // onClick={() => {
-                    //   getRowId === "1" ? setRowId("0") : setRowId("1");
+                    onDoubleClick={() => {
+                      getRowId === "1" ? setRowId("0") : setRowId(data.id);
+                      onOpenEditProducts();
+                    }}
+                    backgroundColor={
+                      getRowId === data.id ? getRowColor : "#ffffff"
+                    }
+                    onClick={() => {
+                      getRowId === "1" ? setRowId("0") : setRowId(data.id);
 
-                    //   getRowId === "0" ? getRowColor : "#ffffff";
-                    // }}
+                      getRowId === data.id ? getRowColor : "#ffffff";
+                    }}
                   >
-                    <Td w="100%">
+                    <Td w="100%" h="2vh">
                       <Box
                         display={"flex"}
                         alignItems={"center"}
                         justifyContent={"space-between"}
                       >
-                        <Box display={"flex"} gap="2">
-                          <Box>{data.id}</Box>
-                          <Box>{data.name}</Box>
-                        </Box>
-                        <Box display={"flex"} gap="1">
-                          <Box>
-                            <Button
-                              w="20px"
-                              h="30px"
-                              bg={"AMAR.30"}
-                              borderRadius="10px"
-                              onClick={() => {
-                                onOpenEditProducts();
-                              }}
-                            >
-                              <Icon
-                                as={MdEdit}
-                                w="20px"
-                                h="20px"
-                                color={"BRPR.10"}
-                                display="center"
-                                alignItems="center"
-                                justifyContent="center"
-                              />
-                            </Button>
+                        <Box
+                          w="90%"
+                          display={"flex"}
+                          alignItems={"center"}
+                          // justifyContent={"space-between"}
+                        >
+                          <Box
+                            w="60%"
+                            display={"flex"}
+                            alignItems={"center"}
+                            // justifyContent={"space-between"}
+                          >
+                            <Box>{data.name}</Box>
                           </Box>
-                          <Box>
-                            <Button
-                              w="20px"
-                              h="30px"
-                              bg={"VERM.30"}
-                              borderRadius="10px"
-                              onClick={() => {
-                                onOpenDeleteProducts();
-                              }}
-                            >
-                              <Icon
-                                as={MdDelete}
+                          <Box w="20%" gap="3" display={"flex"}>
+                            <Text>Quantidade:</Text>
+                            <Text>{data.amount}</Text>
+                          </Box>
+                          <Box
+                            w="20%"
+                            display={"flex"}
+                            // justifyContent={"space-between"}
+                          >
+                            <Box w="50%" gap="3" display={"flex"}>
+                              <Text>Preço:</Text>
+                              <Text>{data.price}</Text>
+                            </Box>
+                            <Box w="50%" gap="3" display={"flex"}>
+                              <Text>Ultimo Preço:</Text>
+                              <Text>{data.current}</Text>
+                            </Box>
+                          </Box>
+                        </Box>
+                        <Box
+                          w="20%"
+                          display={"flex"}
+                          justifyContent={"space-between"}
+                        >
+                          <Box />
+                          <Box display={"flex"} gap="1">
+                            <Box>
+                              <Button
                                 w="20px"
-                                h="20px"
-                                color={"BRPR.10"}
-                                display="center"
-                                alignItems="center"
-                                justifyContent="center"
-                              />
-                            </Button>
+                                h="30px"
+                                bg={"AMAR.30"}
+                                borderRadius="10px"
+                                onClick={() => {
+                                  onOpenEditProducts();
+                                }}
+                                _hover={{
+                                  bg: "AMAR.40",
+                                }}
+                              >
+                                <Icon
+                                  as={MdEdit}
+                                  w="20px"
+                                  h="20px"
+                                  color={"BRPR.10"}
+                                  display="center"
+                                  alignItems="center"
+                                  justifyContent="center"
+                                />
+                              </Button>
+                            </Box>
+                            <Box>
+                              <Button
+                                w="20px"
+                                h="30px"
+                                bg={"VERM.30"}
+                                borderRadius="10px"
+                                onClick={() => {
+                                  onOpenDeleteProducts();
+                                }}
+                                _hover={{
+                                  bg: "VERM.10",
+                                }}
+                              >
+                                <Icon
+                                  as={MdDelete}
+                                  w="20px"
+                                  h="20px"
+                                  color={"BRPR.10"}
+                                  display="center"
+                                  alignItems="center"
+                                  justifyContent="center"
+                                />
+                              </Button>
+                            </Box>
                           </Box>
                         </Box>
                       </Box>

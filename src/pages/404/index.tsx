@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import {
   Box,
   Heading,
@@ -12,6 +11,7 @@ import {
   useColorModeValue,
   createIcon,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 export default function Page404() {
   return (
@@ -22,7 +22,6 @@ export default function Page404() {
           textAlign={"center"}
           spacing={{ base: 8, md: 14 }}
           pt="50px"
-          // py={{ base: 20, md: 36 }}
         >
           <Heading
             fontWeight={600}
@@ -45,20 +44,21 @@ export default function Page404() {
             alignSelf={"center"}
             position={"relative"}
           >
-            <Button
-              colorScheme={"green"}
-              bg={"blue.400"}
-              rounded={"full"}
-              px={6}
-              _hover={{
-                bg: "blue.700",
-              }}
-            >
-              Voltar
-            </Button>
-            {/* <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
-              Learn more
-            </Button> */}
+            <Link href="/">
+              <Button
+                colorScheme={"green"}
+                bg={"blue.400"}
+                rounded={"full"}
+                px={6}
+                _hover={{
+                  bg: "blue.700",
+                }}
+                // onClick={() => {
+                // }}
+              >
+                Voltar
+              </Button>
+            </Link>
             <Box>
               <Icon
                 as={Arrow}
@@ -76,7 +76,7 @@ export default function Page404() {
                 top={"-15px"}
                 transform={"rotate(10deg)"}
               >
-                retornar para lista.
+                retornar para o inicio.
               </Text>
             </Box>
           </Stack>
