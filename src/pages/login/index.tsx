@@ -7,7 +7,6 @@ import {
   FormLabel,
   Input,
   InputGroup,
-  HStack,
   InputRightElement,
   Stack,
   Button,
@@ -17,9 +16,8 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { useState } from "react";
-// import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 
-export default function LoginPage() {
+export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -45,20 +43,6 @@ export default function LoginPage() {
           p={8}
         >
           <Stack spacing={4}>
-            {/* <HStack>
-              <Box>
-                <FormControl id="firstName" isRequired>
-                  <FormLabel>First Name</FormLabel>
-                  <Input type="text" />
-                </FormControl>
-              </Box>
-              <Box>
-                <FormControl id="lastName">
-                  <FormLabel>Last Name</FormLabel>
-                  <Input type="text" />
-                </FormControl>
-              </Box>
-            </HStack> */}
             <FormControl id="email" isRequired>
               <FormLabel>Email</FormLabel>
               <Input type="email" />
@@ -79,24 +63,21 @@ export default function LoginPage() {
                 </InputRightElement>
               </InputGroup>
             </FormControl>
-            <Stack spacing={10} pt={2}>
-              <Button
-                loadingText="Submitting"
-                size="lg"
-                bg={"blue.400"}
-                color={"white"}
-                _hover={{
-                  bg: "blue.500",
-                }}
-              >
-                Vamos
-              </Button>
+            <Stack spacing={10} pt={2} display={"flex"} alignItems={"center"}>
+              <Link href="/produtos">
+                <Button
+                  loadingText="Submitting"
+                  size="lg"
+                  bg={"AZUL.40"}
+                  color={"white"}
+                  _hover={{
+                    bg: "AZUL.30",
+                  }}
+                >
+                  Vamos
+                </Button>
+              </Link>
             </Stack>
-            {/* <Stack pt={6}>
-              <Text align={"center"}>
-                Already a user? <Link color={"blue.400"}>Login</Link>
-              </Text>
-            </Stack> */}
           </Stack>
         </Box>
       </Stack>
