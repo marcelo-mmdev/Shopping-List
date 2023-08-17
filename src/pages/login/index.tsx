@@ -30,10 +30,10 @@ export default function Login() {
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"} textAlign={"center"}>
-            Login das Compras
+            Login do Shopping
           </Heading>
           <Text fontSize={"lg"} color={"gray.600"}>
-            Vamos abastecer a dispensa ✌️
+            Vamos nós organizar ✌️
           </Text>
         </Stack>
         <Box
@@ -74,7 +74,7 @@ export default function Login() {
                     bg: "AZUL.30",
                   }}
                 >
-                  Vamos
+                  Vamos!
                 </Button>
               </Link>
             </Stack>

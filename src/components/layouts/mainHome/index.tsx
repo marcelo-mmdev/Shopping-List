@@ -65,7 +65,7 @@ const MainHome = () => {
         <TableContainer>
           <Table>
             <Thead>
-              <Tr bg="AZUL.30">
+              <Tr bg="CINZ.60">
                 <Th
                   onClick={() => {}}
                   borderTopRadius={"8px"}
@@ -78,28 +78,35 @@ const MainHome = () => {
                     alignItems={"center"}
                     justifyContent={"space-between"}
                   >
-                    <Box>Produtos</Box>
+                    <Box>
+                      <Text as={"p"} color={"BRPR.20"} fontSize={"20px"}>
+                        Produtos
+                      </Text>
+                    </Box>
                     <Box>
                       <Button
-                        w="38px"
-                        h="32px"
-                        bg={"VERD.30"}
+                        w="100%"
+                        h="25px"
+                        bg={"none"}
+                        color={"VERD.30"}
                         borderRadius="10px"
                         onClick={() => {
                           onOpenAddProducts();
                         }}
                         _hover={{
-                          bg: "VERD.20",
+                          bg: "Vnone",
                         }}
                       >
                         <Icon
                           as={MdAddShoppingCart}
-                          w="17px"
-                          h="17px"
+                          w="25px"
+                          h="25px"
+                          color={"VERD.30"}
                           display="center"
                           alignItems="center"
                           justifyContent="center"
                         />
+                        Adicionar
                       </Button>
                     </Box>
                   </Box>
@@ -152,29 +159,43 @@ const MainHome = () => {
                             alignItems={"center"}
                             // justifyContent={"space-between"}
                           >
-                            <Box>{data.name}</Box>
+                            <Text color={"BRPR.20"} fontSize={"18px"}>
+                              {data.name}
+                            </Text>
                           </Box>
                           <Box w="20%" gap="3" display={"flex"}>
-                            <Text>Quantidade:</Text>
-                            <Text>{data.amount}</Text>
+                            <Text color={"CINZ.60"} fontSize={"12px"}>
+                              Quantidade:
+                            </Text>
+                            <Text color={"BRPR.20"} fontSize={"16px"}>
+                              {data.amount}
+                            </Text>
                           </Box>
                           <Box
                             w="20%"
                             display={"flex"}
                             // justifyContent={"space-between"}
                           >
-                            <Box w="50%" gap="3" display={"flex"}>
-                              <Text>Preço:</Text>
-                              <Text>{data.price}</Text>
+                            <Box w="100%" gap="3" display={"flex"}>
+                              <Text color={"CINZ.60"} fontSize={"12px"}>
+                                Preço:
+                              </Text>
+                              <Text color={"BRPR.20"} fontSize={"16px"}>
+                                {data.price}
+                              </Text>
                             </Box>
-                            <Box w="50%" gap="3" display={"flex"}>
-                              <Text>Ultimo Preço:</Text>
-                              <Text>{data.current}</Text>
-                            </Box>
+                            {/* <Box w="50%" gap="3" display={"flex"}>
+                              <Text color={"CINZ.60"} fontSize={"12px"}>
+                                Ultimo Preço:
+                              </Text>
+                              <Text color={"BRPR.20"} fontSize={"16px"}>
+                                {data.current}
+                              </Text>
+                            </Box> */}
                           </Box>
                         </Box>
                         <Box
-                          w="20%"
+                          w="10%"
                           display={"flex"}
                           justifyContent={"space-between"}
                         >
@@ -182,22 +203,23 @@ const MainHome = () => {
                           <Box display={"flex"} gap="1">
                             <Box>
                               <Button
-                                w="20px"
-                                h="30px"
-                                bg={"AMAR.30"}
+                                w="100%"
+                                h="100%"
+                                bg={"none"}
                                 borderRadius="10px"
                                 onClick={() => {
                                   onOpenEditProducts();
                                 }}
                                 _hover={{
-                                  bg: "AMAR.40",
+                                  // bg: "AMAR.40",
+                                  color: "VERD.10",
                                 }}
                               >
                                 <Icon
                                   as={MdEdit}
-                                  w="20px"
-                                  h="20px"
-                                  color={"BRPR.10"}
+                                  w="30px"
+                                  h="25px"
+                                  color={"AMAR.30"}
                                   display="center"
                                   alignItems="center"
                                   justifyContent="center"
@@ -206,22 +228,25 @@ const MainHome = () => {
                             </Box>
                             <Box>
                               <Button
-                                w="20px"
-                                h="30px"
-                                bg={"VERM.30"}
+                                w="100%"
+                                h="100%"
+                                bg={"none"}
+                                color={"VERM.20"}
                                 borderRadius="10px"
                                 onClick={() => {
                                   onOpenDeleteProducts();
                                 }}
-                                _hover={{
-                                  bg: "VERM.10",
-                                }}
+                                _hover={
+                                  {
+                                    // bg: "VERM.10",
+                                  }
+                                }
                               >
                                 <Icon
                                   as={MdDelete}
-                                  w="20px"
-                                  h="20px"
-                                  color={"BRPR.10"}
+                                  w="30px"
+                                  h="25px"
+                                  color={"VERM.30"}
                                   display="center"
                                   alignItems="center"
                                   justifyContent="center"
